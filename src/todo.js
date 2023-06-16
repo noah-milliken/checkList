@@ -3,6 +3,7 @@ function todoFactory(category, title, description, dueDate, priority, completed 
     return { category, title, description, dueDate, priority, completed }
 }
 
+
 let todos = [{
     category: "Work",
     title: "Project Proposal",
@@ -44,6 +45,7 @@ let todos = [{
     completed: false
 }
 ]
+
 
 
 export { todoFactory, todos }

@@ -1,5 +1,5 @@
 import './style.css'
-import { todoFactory, todos, categories } from "./todo"
+import { todoFactory, todos } from "./todo"
 
 function render() {
     const listItems = document.getElementById('list-items')
@@ -136,6 +136,11 @@ document.addEventListener('click', (e) => {
         const item = e.target.dataset.category
         console.log(item)
         addCategory(item)
+    }
+    if (e.target.id === 'add-new-item') {
+        const formDiv = document.getElementById('form-container')
+        formDiv.classList.toggle('hidden')
+        addForm()
     }
 })
 

@@ -73,3 +73,8 @@ body {
     display: absolute;
 
 }
+
+
+.hidden {
+    display: none;
+}

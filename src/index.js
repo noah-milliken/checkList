@@ -36,6 +36,7 @@ render()
 
 document.addEventListener('submit', (e) => {
     e.preventDefault()
+    const formDiv = document.getElementById('form-container')
     const formName = document.getElementById('hidden-form-id').value
     const form = document.getElementById('todo-input-form')
     if (formName === 'add') {
@@ -73,6 +74,7 @@ document.addEventListener('submit', (e) => {
         todos.push(newTodo)
         render()
     }
+    formDiv.classList.toggle('hidden')
 
 })
 
@@ -123,22 +125,21 @@ function addForm(todo = { category: '', title: '', description: '', dueDate: '',
 addForm()
 
 document.addEventListener('click', (e) => {
+    const formDiv = document.getElementById('form-container')
     if (e.target.id === 'delete-button') {
         todos.splice(e.target.dataset.id, 1)
         render()
     } if (e.target.id === 'edit-button') {
         const id = e.target.dataset.id
-        console.log(id)
-        console.log('edit-button')
+        formDiv.classList.toggle('hidden')
         editForm(id)
     }
     if (e.target.id === 'add-todo-category') {
         const item = e.target.dataset.category
-        console.log(item)
+        formDiv.classList.toggle('hidden')
         addCategory(item)
     }
     if (e.target.id === 'add-new-item') {
-        const formDiv = document.getElementById('form-container')
         formDiv.classList.toggle('hidden')
         addForm()
     }

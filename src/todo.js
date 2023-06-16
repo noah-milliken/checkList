@@ -1,6 +1,17 @@
 
-function todoFactory(category, title, description, dueDate, priority, completed = true) {
-    return { category, title, description, dueDate, priority, completed }
+function todoFactory(category, title, description, dueDate, priority, completed) {
+    return {
+        category,
+        title,
+        description,
+        dueDate,
+        priority,
+        completed,
+        get completed() {
+            return completed
+        },
+        toggleComplete: () => completed = !completed
+    }
 }
 
 
